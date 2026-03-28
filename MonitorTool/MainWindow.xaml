@@ -40,7 +40,7 @@
 
             <!-- Thin divider -->
             <Rectangle Height="1"
-                       Fill="{ThemeResource DividerStrokeColorDefaultBrush}"
+                       Fill="{ThemeResource TextFillColorSecondaryBrush}"
                        Opacity="0.5"/>
 
             <!-- ── CPU row ─────────────────────────────────────────────────── -->
@@ -149,7 +149,7 @@
 
             <!-- ── Thin divider + footer ──────────────────────────────────── -->
             <Rectangle Height="1"
-                       Fill="{ThemeResource DividerStrokeColorDefaultBrush}"
+                       Fill="{ThemeResource TextFillColorSecondaryBrush}"
                        Opacity="0.3"/>
 
             <TextBlock x:Name="StatusText"

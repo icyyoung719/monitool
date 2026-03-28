@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using Microsoft.UI;
+using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -103,11 +104,11 @@ public sealed partial class MainWindow : Window
         _appWindow = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(_hwnd));
 
         // ── Mica backdrop (Windows 11 Fluent Design) ─────────────────────────
-        if (MicaBackdrop.IsSupported())
+        if (MicaController.IsSupported())
         {
             SystemBackdrop = new MicaBackdrop();
         }
-        else if (DesktopAcrylicBackdrop.IsSupported())
+        else if (DesktopAcrylicController.IsSupported())
         {
             SystemBackdrop = new DesktopAcrylicBackdrop();
         }

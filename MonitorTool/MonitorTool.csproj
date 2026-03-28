@@ -19,8 +19,8 @@
 
   <ItemGroup>
     <!-- Windows App SDK (WinUI 3) -->
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240311000" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" IncludeAssets="build" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" IncludeAssets="build" />
     <!-- WMI for GPU and temperature metrics -->
     <PackageReference Include="System.Management" Version="8.0.0" />
     <!-- Performance counters for CPU usage -->
