@@ -1,0 +1,163 @@
+<Window
+    x:Class="MonitorTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MonitorTool"
+    Title="MonitorTool">
+
+    <!--
+        Root grid: transparent so the Mica/Acrylic system backdrop shows through.
+        PointerPressed on the entire surface enables window dragging.
+    -->
+    <Grid x:Name="RootGrid"
+          Padding="14,10,14,14"
+          Background="Transparent"
+          PointerPressed="RootGrid_PointerPressed">
+
+        <StackPanel Spacing="7" MinWidth="230">
+
+            <!-- ── Title row ──────────────────────────────────────────────── -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Text="System Monitor"
+                           FontSize="12"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"/>
+
+                <!-- Hotkey hint -->
+                <TextBlock Grid.Column="1"
+                           Text="Ctrl+Shift+M"
+                           FontSize="10"
+                           Opacity="0.45"
+                           VerticalAlignment="Center"
+                           Margin="8,0,0,0"/>
+            </Grid>
+
+            <!-- Thin divider -->
+            <Rectangle Height="1"
+                       Fill="{ThemeResource DividerStrokeColorDefaultBrush}"
+                       Opacity="0.5"/>
+
+            <!-- ── CPU row ─────────────────────────────────────────────────── -->
+            <Grid x:Name="CpuRow" ColumnSpacing="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="48"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="CPU"
+                           FontSize="11"
+                           FontWeight="Medium"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           VerticalAlignment="Center"/>
+                <ProgressBar Grid.Column="1"
+                             x:Name="CpuBar"
+                             Minimum="0" Maximum="100"
+                             Height="6"
+                             VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           x:Name="CpuText"
+                           FontSize="11"
+                           FontFamily="Consolas"
+                           TextAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- ── Memory row ─────────────────────────────────────────────── -->
+            <Grid x:Name="MemRow" ColumnSpacing="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="48"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="MEM"
+                           FontSize="11"
+                           FontWeight="Medium"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           VerticalAlignment="Center"/>
+                <ProgressBar Grid.Column="1"
+                             x:Name="MemBar"
+                             Minimum="0" Maximum="100"
+                             Height="6"
+                             VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           x:Name="MemText"
+                           FontSize="11"
+                           FontFamily="Consolas"
+                           TextAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- ── GPU row ────────────────────────────────────────────────── -->
+            <Grid x:Name="GpuRow" ColumnSpacing="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="48"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="GPU"
+                           FontSize="11"
+                           FontWeight="Medium"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           VerticalAlignment="Center"/>
+                <ProgressBar Grid.Column="1"
+                             x:Name="GpuBar"
+                             Minimum="0" Maximum="100"
+                             Height="6"
+                             VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           x:Name="GpuText"
+                           FontSize="11"
+                           FontFamily="Consolas"
+                           TextAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- ── Temperature row ───────────────────────────────────────── -->
+            <Grid x:Name="TempRow" ColumnSpacing="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="48"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="TEMP"
+                           FontSize="11"
+                           FontWeight="Medium"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           VerticalAlignment="Center"/>
+                <ProgressBar Grid.Column="1"
+                             x:Name="TempBar"
+                             Minimum="0" Maximum="100"
+                             Height="6"
+                             VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           x:Name="TempText"
+                           FontSize="11"
+                           FontFamily="Consolas"
+                           TextAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- ── Thin divider + footer ──────────────────────────────────── -->
+            <Rectangle Height="1"
+                       Fill="{ThemeResource DividerStrokeColorDefaultBrush}"
+                       Opacity="0.3"/>
+
+            <TextBlock x:Name="StatusText"
+                       Text="Initializing…"
+                       FontSize="10"
+                       Opacity="0.5"
+                       HorizontalAlignment="Center"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
